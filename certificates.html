@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificates – Alexandra Sasu</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Certificates</h1>
+    </header>
+
+    <main class="container">
+      <div class="slider">
+        <button class="prev">&#10094;</button>
+        <div class="slides">
+          <img src="images/certificate1.png" alt="Certificate 1" />
+          <img src="images/certificate2.png" alt="Certificate 2" />
+          <img src="images/certificate3.png" alt="Certificate 3" />
+        </div>
+        <button class="next">&#10095;</button>
+      </div>
+
+      <a class="button-link" href="index.html">⬅ Back to Portfolio</a>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Alexandra Sasu |
+        <a href="https://github.com/AlexWSN" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+        |
+        <a
+          href="https://www.linkedin.com/in/alexandra-sasu-821006273/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </p>
+    </footer>
+    <script src="js/slider.js"></script>
+    <script>
+      // Verifică dacă imaginile există în DOM
+      const images = document.querySelectorAll(".slides img");
+      console.log(`Am găsit ${images.length} imagini.`);
+
+      images.forEach((img, index) => {
+        img.onload = () =>
+          console.log(
+            `Imaginea ${index + 1} s-a încărcat cu succes: ${img.src}`
+          );
+        img.onerror = () =>
+          console.error(
+            `Eroare la încărcarea imaginii ${index + 1}: ${img.src}`
+          );
+      });
+    </script>
+  </body>
+</html>
