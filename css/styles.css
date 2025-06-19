@@ -1,26 +1,72 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fefefe;
   color: #333;
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  min-height: 100vh;  /* asigură înălțimea minimă a body */
+  min-height: 100vh; /* asigură înălțimea minimă a body */
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #242a4f,  #85c9d2);  
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-5px);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-text {
+ text-align: justify;
+  line-height: 1.8;
+  color: #eee2e2;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    column-count: 1;
+  }
 }
 
 main {
   flex: 1; /* ocupă tot spațiul disponibil între header și footer */
+  animation: fadeIn 0.7s ease-in-out;
 }
 
-
 header {
-  background-color: #5c6bc0;
-  color: white;
+ background: linear-gradient(135deg, #85c9d2, #242a4f);   
+  color: rgb(235, 235, 235);
   padding: 2rem;
   text-align: center;
 }
@@ -42,7 +88,7 @@ main {
 }
 
 h2 {
-  color: #2c3e50;
+  color: #b9d5f1;
   margin-top: 2rem;
 }
 
@@ -52,9 +98,17 @@ h2 {
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .button-link {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
@@ -66,6 +120,7 @@ h2 {
 
 .button-link:hover {
   background-color: #3f51b5;
+  transform: scale(1.05);
 }
 
 /* Slider */
@@ -102,6 +157,12 @@ h2 {
   cursor: pointer;
   z-index: 1;
 }
+
+.slider button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease;
+}
+
 
 .prev {
   left: 0;

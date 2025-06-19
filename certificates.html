@@ -40,22 +40,7 @@
         >
       </p>
     </footer>
-    <script src="js/slider.js"></script>
-    <script>
-      // Verifică dacă imaginile există în DOM
-      const images = document.querySelectorAll(".slides img");
-      console.log(`Am găsit ${images.length} imagini.`);
 
-      images.forEach((img, index) => {
-        img.onload = () =>
-          console.log(
-            `Imaginea ${index + 1} s-a încărcat cu succes: ${img.src}`
-          );
-        img.onerror = () =>
-          console.error(
-            `Eroare la încărcarea imaginii ${index + 1}: ${img.src}`
-          );
-      });
-    </script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
