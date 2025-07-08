@@ -18,22 +18,72 @@
         <h2>About Me</h2>
         <div class="about-text">
           <p>
-            I’m a Junior Full-Stack Developer with 5 years of experience as a
-            supervisor in parental education. After completing an intensive
-            full-stack course, I transitioned into IT to combine creativity and
-            logic in building intuitive, user-centered applications. I’m
-            passionate about clean code, responsive design, and meaningful user
-            experiences. My technical skills include HTML, CSS, JavaScript,
-            React, and Node.js, along with strong soft skills developed through
-            years of coordinating and guiding teams in the field of parental
-            education.
+            I had the pleasure of working for over 5 years as a supervisor in
+            parental education. During this time, I was involved in meaningful
+            and impactful projects, and I like to believe that, together with my
+            team, we made a positive difference on a national level,
+            collaborating with schools and educational institutions all across
+            Romania. Still, I felt I hadn’t quite found my place. After
+            completing an intensive one-year fullstack development course, I
+            decided to transition into a field that felt closer to my heart —
+            partly out of a desire to connect with people who share my mindset
+            and passions.
           </p>
           <p>
-            I’m eager to grow and absorb as much knowledge as possible. Although
-            my current job leaves me little time for personal projects, I’m
-            highly motivated to contribute, learn, and evolve in a real
-            development team.
+            I love painting — it helps me stay grounded and expressive in ways
+            words can't always reach. That’s why I’ve included a small selection
+            of my artwork in this portfolio: it’s a glimpse into the way I see
+            and feel the world. Music is my constant companion — mostly heavy
+            metal (with a funky start to every morning), and visual creativity
+            flows alongside it. I've always been fascinated by 3D modeling,
+            especially character design. Over the past year, I’ve been learning
+            Blender in my spare time, and I’ve added here a few of my early
+            experiments with digital sculpting — raw, but made with joy. I’m the
+            proud owner of a hope: that one day I’ll learn to play the cello
+            beautifully and own a '90 Honda Prelude.
           </p>
+        </div>
+      </section>
+      <section class="portfolio-section">
+        <h2>My Creative Projects</h2>
+        <img src="images/paintings/storm-inside.jpg" alt="Storm Inside" />
+        <div class="button-group">
+          <button onclick="toggleGallery('paintings-gallery')">
+            🎨 Show Paintings
+          </button>
+          <button onclick="toggleGallery('models-gallery')">
+            🧊 Show 3D Models
+          </button>
+        </div>
+
+        <div id="paintings-gallery" class="gallery hidden">
+          <h3>Selected Paintings</h3>
+          <div class="gallery-items">
+            <div class="gallery-item">
+              <img src="images/paintings/flow.jpg" alt="Flow" />
+              <p>Flow</p>
+            </div>
+            <div class="gallery-item">
+              <img src="images/paintings/storm-inside.jpg" alt="Storm Inside" />
+              <p>Storm Inside</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="models-gallery" class="gallery hidden">
+          <h3>3D Character Modeling – Blender</h3>
+          <div class="gallery-items">
+            <div class="gallery-item">
+              <img src="images/3d/luna-character.jpg" alt="Luna Character" />
+              <p>Luna – Early sculpt</p>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="images/3d/creature-concept.jpg"
+                alt="Creature Concept" />
+              <p>Creature Concept</p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -23,3 +23,7 @@ prev.addEventListener('click', () => {
 window.addEventListener('resize', updateSlider);
 window.addEventListener('load', updateSlider);
 
+function toggleGallery(id) {
+  const gallery = document.getElementById(id);
+  gallery.classList.toggle("hidden");
+}
