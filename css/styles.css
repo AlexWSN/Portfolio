@@ -59,59 +59,107 @@ body {
   }
 }
 
+/* Layout principal pentru Sheldon + butoane */
+.project-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sheldon-img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Butoanele */
 .button-group {
   display: flex;
-  gap: 10px;
-  margin: 20px 0;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .button-group button {
-  padding: 10px 16px;
-  background-color: #444;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #202020;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .button-group button:hover {
-  background-color: #666;
+  background-color: #5c5cff;
+  transform: translateY(-2px);
 }
 
+/* Galeriile */
 .gallery {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .gallery-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.gallery-item {
-  flex: 1 1 200px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
 .gallery-item img {
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-item p {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: #444;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
 }
 
+/* Ascunde galeria */
 .hidden {
   display: none;
+}
+
+.certification-section p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.tech-logos {
+  display: flex;
+  gap: 12px; /* spațiu între iconițe */
+  align-items: center;
+  margin-top: 0.5rem;
+  flex-wrap: wrap; /* să sară pe linia următoare dacă nu încap */
+}
+
+.tech-logos img {
+  width: 40px;
+  height: 40px;
+  cursor: default;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease;
+}
+
+.tech-logos img:hover {
+  transform: scale(1.2);
+}
+
+.page-wrapper {
+  background: linear-gradient(135deg, #85c9d2, #242a4f);
+  color: rgb(235, 235, 235);
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -177,6 +225,57 @@ h2 {
   background-color: #3f51b5;
   transform: scale(1.05);
 }
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.hidden {
+  display: none;
+}
+
+.close-btn,
+.prev,
+.next {
+  position: absolute;
+  background: none;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-btn {
+  top: 20px;
+  right: 30px;
+}
+
+.prev {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 /* Slider */
 .slider {
@@ -223,6 +322,74 @@ h2 {
 }
 .next {
   right: 0;
+}
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.lightbox .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox .nav-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  transform: translateY(-50%);
+}
+#lightbox {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox img {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+#lightbox img.fade-out {
+  opacity: 0;
+}
+
+.nav-buttons span {
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 footer {
