@@ -97,6 +97,18 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.button-group button {
+  width: 80%;
+  margin: 10px 0;
+  text-align: center;
+}
 
 .button-group button:hover {
   background-color: #5c5cff;
