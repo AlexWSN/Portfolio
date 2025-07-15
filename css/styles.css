@@ -25,6 +25,12 @@ body {
   margin: 0 auto 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+}
 
 .about-section {
   max-width: 1000px;
@@ -474,5 +480,35 @@ footer a:hover {
 
   footer {
     padding: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .button-group,
+  .gallery-item,
+  .menu,
+  .menu button,
+  .button-link,
+  .project-intro,
+  header nav,
+  header nav a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .button-group button,
+  .menu button,
+  .button-link {
+    width: 80% !important;
+    max-width: 300px;
+    margin: 10px auto !important;
+  }
+
+  header nav a {
+    margin: 5px 0 !important;
   }
 }
